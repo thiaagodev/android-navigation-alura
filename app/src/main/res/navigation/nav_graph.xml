@@ -11,4 +11,11 @@
         android:label="ListaProdutosFragment"
         tools:layout="@layout/lista_produtos" />
 
+    <fragment
+        android:id="@+id/detalhesProduto"
+        android:name="br.com.alura.aluraesporte.ui.fragment.DetalhesProdutoFragment"
+        android:label="DetalhesProduto"
+        tools:layout="@layout/detalhes_produto" />
+
+
 </navigation>
