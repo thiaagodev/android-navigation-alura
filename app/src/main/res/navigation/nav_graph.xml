@@ -9,19 +9,31 @@
         android:id="@+id/listaProdutosFragment"
         android:name="br.com.alura.aluraesporte.ui.fragment.ListaProdutosFragment"
         android:label="ListaProdutosFragment"
-        tools:layout="@layout/lista_produtos" />
-
+        tools:layout="@layout/lista_produtos">
+        <action
+            android:id="@+id/action_listaProdutosFragment_to_detalhesProduto"
+            app:destination="@id/detalhesProduto" />
+    </fragment>
+    s
     <fragment
         android:id="@+id/detalhesProduto"
         android:name="br.com.alura.aluraesporte.ui.fragment.DetalhesProdutoFragment"
         android:label="DetalhesProduto"
-        tools:layout="@layout/detalhes_produto" />
+        tools:layout="@layout/detalhes_produto">
+        <action
+            android:id="@+id/action_detalhesProduto_to_pagamentoFragment"
+            app:destination="@id/pagamentoFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/pagamentoFragment"
         android:name="br.com.alura.aluraesporte.ui.fragment.PagamentoFragment"
         android:label="PagamentoFragment"
-        tools:layout="@layout/pagamento" />
+        tools:layout="@layout/pagamento">
+        <action
+            android:id="@+id/action_pagamentoFragment_to_listaProdutosFragment"
+            app:destination="@id/listaProdutosFragment" />
+    </fragment>
 
 
 </navigation>
