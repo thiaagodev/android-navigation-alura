@@ -9,11 +9,9 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import br.com.alura.aluraesporte.R
 import br.com.alura.aluraesporte.extensions.formatParaMoedaBrasileira
-import br.com.alura.aluraesporte.model.Produto
 import br.com.alura.aluraesporte.ui.activity.CHAVE_PRODUTO_ID
 import br.com.alura.aluraesporte.ui.viewmodel.DetalhesProdutoViewModel
 import kotlinx.android.synthetic.main.detalhes_produto.*
-import org.koin.android.ext.android.inject
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
@@ -24,7 +22,9 @@ class DetalhesProdutoFragment : Fragment() {
             ?: throw IllegalArgumentException(ID_PRODUTO_INVALIDO)
     }
     private val viewModel: DetalhesProdutoViewModel by viewModel { parametersOf(produtoId) }
-    var quandoProdutoComprado: (produto: Produto) -> Unit = {}
+    private val controlador by lazy {
+        findNavController()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,7 +49,7 @@ class DetalhesProdutoFragment : Fragment() {
             viewModel.produtoEncontrado.value?.let {
                 val dados = Bundle()
                 dados.putLong(CHAVE_PRODUTO_ID, it.id)
-                findNavController().navigate(R.id.pagamentoFragment, dados)
+                controlador.navigate(R.id.pagamentoFragment, dados)
             }
         }
     }
