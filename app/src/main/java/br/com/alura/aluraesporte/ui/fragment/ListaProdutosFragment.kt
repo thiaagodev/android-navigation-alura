@@ -58,9 +58,8 @@ class ListaProdutosFragment : Fragment() {
         val divisor = DividerItemDecoration(context, VERTICAL)
         lista_produtos_recyclerview.addItemDecoration(divisor)
         adapter.onItemClickListener = {
-            val dados = Bundle()
-            dados.putLong(CHAVE_PRODUTO_ID, it.id)
-            controlador.navigate(R.id.action_listaProdutosFragment_to_detalhesProduto, dados)
+            val direcoes = ListaProdutosFragmentDirections.actionListaProdutosFragmentToDetalhesProduto(it.id)
+            controlador.navigate(direcoes)
         }
         lista_produtos_recyclerview.adapter = adapter
     }
