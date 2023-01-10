@@ -13,10 +13,12 @@ import br.com.alura.aluraesporte.R
 import br.com.alura.aluraesporte.extensions.formatParaMoedaBrasileira
 import br.com.alura.aluraesporte.model.Pagamento
 import br.com.alura.aluraesporte.model.Produto
-import br.com.alura.aluraesporte.ui.activity.CHAVE_PRODUTO_ID
 import br.com.alura.aluraesporte.ui.viewmodel.PagamentoViewModel
-import kotlinx.android.synthetic.main.pagamento.*
-import org.koin.android.ext.android.inject
+import kotlinx.android.synthetic.main.pagamento.pagamento_botao_confirma_pagamento
+import kotlinx.android.synthetic.main.pagamento.pagamento_cvc
+import kotlinx.android.synthetic.main.pagamento.pagamento_data_validade
+import kotlinx.android.synthetic.main.pagamento.pagamento_numero_cartao
+import kotlinx.android.synthetic.main.pagamento.pagamento_preco
 import org.koin.android.viewmodel.ext.android.viewModel
 
 private const val FALHA_AO_CRIAR_PAGAMENTO = "Falha ao criar pagamento"

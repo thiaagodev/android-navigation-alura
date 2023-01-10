@@ -10,9 +10,10 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import br.com.alura.aluraesporte.R
 import br.com.alura.aluraesporte.extensions.formatParaMoedaBrasileira
-import br.com.alura.aluraesporte.ui.activity.CHAVE_PRODUTO_ID
 import br.com.alura.aluraesporte.ui.viewmodel.DetalhesProdutoViewModel
-import kotlinx.android.synthetic.main.detalhes_produto.*
+import kotlinx.android.synthetic.main.detalhes_produto.detalhes_produto_botao_comprar
+import kotlinx.android.synthetic.main.detalhes_produto.detalhes_produto_nome
+import kotlinx.android.synthetic.main.detalhes_produto.detalhes_produto_preco
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
@@ -49,7 +50,8 @@ class DetalhesProdutoFragment : Fragment() {
     private fun configuraBotaoComprar() {
         detalhes_produto_botao_comprar.setOnClickListener {
             viewModel.produtoEncontrado.value?.let {
-                val direcao = DetalhesProdutoFragmentDirections.actionDetalhesProdutoToPagamentoFragment(it.id)
+                val direcao =
+                    DetalhesProdutoFragmentDirections.actionDetalhesProdutoToPagamentoFragment(it.id)
                 controlador.navigate(direcao)
             }
         }
