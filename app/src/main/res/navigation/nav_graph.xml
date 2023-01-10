@@ -12,7 +12,11 @@
         tools:layout="@layout/lista_produtos">
         <action
             android:id="@+id/action_listaProdutosFragment_to_detalhesProduto"
-            app:destination="@id/detalhesProduto" />
+            app:destination="@id/detalhesProduto"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
 
     <fragment
@@ -22,7 +26,11 @@
         tools:layout="@layout/detalhes_produto">
         <action
             android:id="@+id/action_detalhesProduto_to_pagamentoFragment"
-            app:destination="@id/pagamentoFragment" />
+            app:destination="@id/pagamentoFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <argument
             android:name="produtoId"
             app:argType="long" />
@@ -36,7 +44,11 @@
         <action
             android:id="@+id/action_pagamentoFragment_to_listaProdutosFragment"
             app:destination="@id/listaProdutosFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
             app:launchSingleTop="true"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
         <argument
