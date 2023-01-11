@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/listaProdutosFragment">
+    app:startDestination="@id/login">
 
     <fragment
         android:id="@+id/listaProdutosFragment"
@@ -56,5 +56,14 @@
             app:argType="long" />
     </fragment>
 
+    <fragment
+        android:id="@+id/login"
+        android:name="br.com.alura.aluraesporte.ui.fragment.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/login" >
+        <action
+            android:id="@+id/action_login_to_listaProdutosFragment"
+            app:destination="@id/listaProdutosFragment" />
+    </fragment>
 
 </navigation>
