@@ -17,6 +17,16 @@
             app:exitAnim="@anim/slide_out_top"
             app:popEnterAnim="@anim/slide_in_top"
             app:popExitAnim="@anim/slide_out_bottom_to_top" />
+        <action
+            android:id="@+id/action_listaProdutosFragment_to_LoginFragment"
+            app:enterAnim="@anim/slide_in_bottom_to_top"
+            app:destination="@+id/login"
+            app:exitAnim="@anim/slide_out_top"
+            app:popEnterAnim="@anim/slide_in_top"
+            app:popExitAnim="@anim/slide_out_bottom_to_top"
+            app:popUpTo="@id/listaProdutosFragment"
+            app:popUpToInclusive="true"
+            />
     </fragment>
 
     <fragment
@@ -60,7 +70,7 @@
         android:id="@+id/login"
         android:name="br.com.alura.aluraesporte.ui.fragment.LoginFragment"
         android:label="Login"
-        tools:layout="@layout/login" >
+        tools:layout="@layout/login">
         <action
             android:id="@+id/action_login_to_listaProdutosFragment"
             app:destination="@id/listaProdutosFragment"

@@ -15,4 +15,10 @@ class LoginRepository(private val preferences: SharedPreferences) {
 
     fun estaLogado(): Boolean = preferences.getBoolean(CHAVE_LOGADO, false)
 
+    fun deslogar() {
+        preferences.edit {
+            putBoolean(CHAVE_LOGADO, false)
+        }
+    }
+
 }
