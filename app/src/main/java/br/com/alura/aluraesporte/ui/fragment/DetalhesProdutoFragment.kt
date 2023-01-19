@@ -10,9 +10,11 @@ import androidx.navigation.fragment.navArgs
 import br.com.alura.aluraesporte.R
 import br.com.alura.aluraesporte.extensions.formatParaMoedaBrasileira
 import br.com.alura.aluraesporte.ui.viewmodel.DetalhesProdutoViewModel
+import br.com.alura.aluraesporte.ui.viewmodel.EstadoAppViewModel
 import kotlinx.android.synthetic.main.detalhes_produto.detalhes_produto_botao_comprar
 import kotlinx.android.synthetic.main.detalhes_produto.detalhes_produto_nome
 import kotlinx.android.synthetic.main.detalhes_produto.detalhes_produto_preco
+import org.koin.android.viewmodel.ext.android.sharedViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
@@ -24,6 +26,7 @@ class DetalhesProdutoFragment : BaseFragment() {
         argumentos.produtoId
     }
     private val viewModel: DetalhesProdutoViewModel by viewModel { parametersOf(produtoId) }
+    private val estadoAppViewModel: EstadoAppViewModel by sharedViewModel()
     private val controlador by lazy {
         findNavController()
     }
@@ -44,6 +47,7 @@ class DetalhesProdutoFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         buscaProduto()
         configuraBotaoComprar()
+        estadoAppViewModel.temAppBar = true
     }
 
     private fun configuraBotaoComprar() {
