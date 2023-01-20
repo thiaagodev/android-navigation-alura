@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
+    android:label="Lista de Pagamentos"
     app:startDestination="@id/listaProdutosFragment">
 
     <action
@@ -63,6 +64,11 @@
             app:popEnterAnim="@anim/slide_in_top"
             app:popExitAnim="@anim/slide_out_bottom_to_top" />
     </fragment>
+
+    <fragment
+        android:id="@+id/listaPagamentos"
+        android:name="br.com.alura.aluraesporte.ui.fragment.ListaPagamentosFragment"
+        tools:layout="@layout/lista_pagamentos" />
 
     <navigation
         android:id="@+id/loginGraph"
