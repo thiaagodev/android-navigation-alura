@@ -13,6 +13,7 @@ import br.com.alura.aluraesporte.R
 import br.com.alura.aluraesporte.extensions.formatParaMoedaBrasileira
 import br.com.alura.aluraesporte.model.Pagamento
 import br.com.alura.aluraesporte.model.Produto
+import br.com.alura.aluraesporte.ui.viewmodel.ComponentesVisuais
 import br.com.alura.aluraesporte.ui.viewmodel.EstadoAppViewModel
 import br.com.alura.aluraesporte.ui.viewmodel.PagamentoViewModel
 import kotlinx.android.synthetic.main.pagamento.pagamento_botao_confirma_pagamento
@@ -56,7 +57,7 @@ class PagamentoFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         configuraBotaoConfirmaPagamento()
         buscaProduto()
-        estadoAppViewModel.temAppBar = true
+        estadoAppViewModel.temComponentes = ComponentesVisuais()
     }
 
     private fun buscaProduto() {

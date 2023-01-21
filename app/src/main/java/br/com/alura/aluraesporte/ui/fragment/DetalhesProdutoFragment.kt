@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import br.com.alura.aluraesporte.R
 import br.com.alura.aluraesporte.extensions.formatParaMoedaBrasileira
+import br.com.alura.aluraesporte.ui.viewmodel.ComponentesVisuais
 import br.com.alura.aluraesporte.ui.viewmodel.DetalhesProdutoViewModel
 import br.com.alura.aluraesporte.ui.viewmodel.EstadoAppViewModel
 import kotlinx.android.synthetic.main.detalhes_produto.detalhes_produto_botao_comprar
@@ -47,7 +48,7 @@ class DetalhesProdutoFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
         buscaProduto()
         configuraBotaoComprar()
-        estadoAppViewModel.temAppBar = true
+        estadoAppViewModel.temComponentes = ComponentesVisuais(true, false)
     }
 
     private fun configuraBotaoComprar() {
